@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ColorStatisticsView">
+        <attr name="backgroundColor" format="color"/>
+        <attr name="fontColor" format="color"/>
+        <attr name="size" format="integer" />
+        <attr name="title" format="string" />
+    </declare-styleable>
+</resources>
