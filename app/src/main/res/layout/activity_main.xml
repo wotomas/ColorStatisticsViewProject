@@ -2,16 +2,13 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <info.kimjihyok.coloverstatisticsview.CustomStatisticsView
+    <info.kimjihyok.coloverstatisticsview.ColorStatisticsView
         android:id="@+id/colorStatsView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:color="#E1E1E1">
+        android:layout_height="300dp">
 
-    </info.kimjihyok.coloverstatisticsview.CustomStatisticsView>
-
+    </info.kimjihyok.coloverstatisticsview.ColorStatisticsView>
 
 </RelativeLayout>
