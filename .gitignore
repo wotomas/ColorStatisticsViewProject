@@ -53,3 +53,6 @@ google-services.json
 freeline.py
 freeline/
 freeline_project_description.json
+profiles_settings.xml
+encodings.xml
+bintray.properties

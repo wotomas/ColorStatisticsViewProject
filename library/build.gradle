@@ -1,5 +1,29 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'ColorStatisticsView'
+    bintrayName = 'color-statistics-view'
+
+    publishedGroupId = 'info.kimjihyok'
+    libraryName = 'ColorStatisticsView'
+    artifact = 'color-statistics-view'
+
+    libraryDescription = 'Android Color Statistics View'
+
+    siteUrl = 'https://github.com/wotomas/ColorStatisticsViewProject'
+    gitUrl = 'https://github.com/wotomas/ColorStatisticsViewProject.git'
+
+    libraryVersion = '1.0'
+
+    developerId = 'jkimab'
+    developerName = 'Kim Jimmy'
+    developerEmail = 'jkimab@connect.ust.hk'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
@@ -29,3 +53,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.+'
     testCompile 'junit:junit:4.12'
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
