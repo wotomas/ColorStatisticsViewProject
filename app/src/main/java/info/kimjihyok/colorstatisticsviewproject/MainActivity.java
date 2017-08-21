@@ -1,8 +1,7 @@
 package info.kimjihyok.colorstatisticsviewproject;
 
-import android.content.res.ColorStateList;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import info.kimjihyok.coloverstatisticsview.ColorStatisticsView;
 

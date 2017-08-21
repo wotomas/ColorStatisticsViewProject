@@ -6,4 +6,10 @@
         <attr name="fontSize" format="integer" />
         <attr name="title" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="ColorStatisticsItemView">
+        <attr name="circleColor" format="color" />
+        <attr name="statisticsCount" format="integer" />
+        <attr name="statisticsLabel" format="string" />
+    </declare-styleable>
 </resources>
