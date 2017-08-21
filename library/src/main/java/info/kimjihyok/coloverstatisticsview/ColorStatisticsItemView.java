@@ -10,6 +10,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import info.kimjihyok.coloverstatisticsview.model.StatisticsData;
+
 public class ColorStatisticsItemView extends View {
   private static final String TAG = "ColorStatisticsItemView";
   private static final int STAT_LABEL_TEXT_SIZE = 40;
@@ -104,4 +106,14 @@ public class ColorStatisticsItemView extends View {
   }
 
 
+  public void set(StatisticsData data) {
+    circleColor = data.getColor();
+    statisticsCount = data.getStatisticsCount();
+    statisticsLabel = data.getItemName();
+
+    setupPaint();
+    invalidate();
+    requestLayout();
+  }
 }
+

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/panel_background"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#414f8f"
-                tools:background="#919191">
+                tools:background="#414141">
+
 
     <TextView
         android:id="@+id/title_text_view"
@@ -21,37 +22,27 @@
 
     <LinearLayout
         android:id="@+id/color_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="140dp"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/title_text_view">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="140dp"
-            android:orientation="horizontal">
-            <info.kimjihyok.coloverstatisticsview.ColorStatisticsItemView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                app:statisticsLabel="Sleeping"
-                app:statisticsCount="5"
-                app:circleColor="#F06624"/>
+        <info.kimjihyok.coloverstatisticsview.ColorStatisticsItemView
+            android:id="@+id/first_stat_item"
+            android:layout_width="100dp"
+            android:layout_height="match_parent" />
 
-            <info.kimjihyok.coloverstatisticsview.ColorStatisticsItemView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                app:statisticsLabel="Reading"
-                app:statisticsCount="8"
-                app:circleColor="#7FCA3F"/>
+        <info.kimjihyok.coloverstatisticsview.ColorStatisticsItemView
+            android:id="@+id/second_stat_item"
+            android:layout_width="100dp"
+            android:layout_height="match_parent" />
 
-            <info.kimjihyok.coloverstatisticsview.ColorStatisticsItemView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                app:statisticsLabel="Traveling"
-                app:statisticsCount="9"
-                app:circleColor="#f5c636"/>
-        </LinearLayout>
+        <info.kimjihyok.coloverstatisticsview.ColorStatisticsItemView
+            android:id="@+id/third_stat_item"
+            android:layout_width="100dp"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 
