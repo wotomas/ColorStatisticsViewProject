@@ -5,10 +5,16 @@
 Color Statistics for Android based on a Material Up showcase designed by [Someone](https://github.com/wotomas/ColorStatisticsViewProject#notes-1)
 
 # Demo
-[<img src="media/screenshot.png" width="300" />]()
-[<img src="media/statisticsViewSample.gif" width="300" />]()
+## Adding counters to statistics values
 
-## Implement
+[<img src="media/statisticsViewSample.gif" width="600" />]()
+
+## Original showcase image from [Someone](https://github.com/wotomas/ColorStatisticsViewProject#note-1)
+
+[<img src="media/screenshot.png" width="600" />]()
+
+
+# Implement
 ```gradle
 dependencies {
   compile 'info.kimjihyok:color-statistics-view:0.1.0'
