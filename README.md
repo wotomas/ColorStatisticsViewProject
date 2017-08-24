@@ -1,5 +1,5 @@
 # ColorStatisticsViewProject
-![API](https://img.shields.io/badge/API-16%2B-blue.svg?style=flat) 
+![API](https://img.shields.io/badge/API-16%2B-blue.svg?style=flat) ![Download](https://api.bintray.com/packages/wotomas/maven/color-statistics-view/images/download.svg)
 
 # About
 Color Statistics for Android based on a Material Up showcase designed by [Someone](#Notes)
@@ -41,7 +41,7 @@ colorStatsView.setStatisticsItems(getDummyData());
 colorStatsView/.setStatValue(position, value);
 ```
 
-## Statistic Itmes
+## Statistic Item
 ```java
 private List<StatisticsData> getTestData() {
   List<StatisticsData> resultData = new ArrayList<>();
