@@ -41,6 +41,24 @@ colorStatsView.setStatisticsItems(getDummyData());
 colorStatsView/.setStatValue(position, value);
 ```
 
+## Statistic Itmes
+```java
+private List<StatisticsData> getTestData() {
+  List<StatisticsData> resultData = new ArrayList<>();
+    
+  StatisticsData dataOne = new StatisticsData();
+  dataOne.setItemName("Reading");
+  dataOne.setCircleColor(ContextCompat.getColor(this, R.color.readingColor));
+  dataOne.setStatisticsCount(4);    
+  ...
+
+  resultData.add(dataOne);
+  ...
+    
+  return resultData;
+}
+```
+
 
 
 ### Notes
