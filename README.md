@@ -2,7 +2,7 @@
 ![API](https://img.shields.io/badge/API-16%2B-blue.svg?style=flat) 
 
 # About
-Color Statistics for Android based on a Material Up showcase designed by [Someone](https://github.com/wotomas/ColorStatisticsViewProject#notes-1)
+Color Statistics for Android based on a Material Up showcase designed by [Someone](#Notes)
 
 # Demo
 ## Adding counters to statistics values
@@ -61,5 +61,5 @@ private List<StatisticsData> getTestData() {
 
 
 
-### <a name="note-1"></a> Notes
+### Notes
  - Please help me update this link. I saw it on Material Up, but lost the link and can't find him!
