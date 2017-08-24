@@ -44,7 +44,7 @@ publish {
     userOrg = 'wotomas'
     groupId = 'info.kimjihyok'
     artifactId = 'color-statistics-view'
-    publishVersion = '0.0.1'
+    publishVersion = '0.1.0'
     desc = 'Colorful Statistics Custom View for Android'
     website = 'https://github.com/wotomas/ColorStatisticsViewProject'
 }

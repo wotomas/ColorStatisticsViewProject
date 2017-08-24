@@ -27,22 +27,7 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/title_text_view">
-
-        <info.kimjihyok.coloverstatisticsview.ColorStatisticsItemView
-            android:id="@+id/first_stat_item"
-            android:layout_width="100dp"
-            android:layout_height="match_parent" />
-
-        <info.kimjihyok.coloverstatisticsview.ColorStatisticsItemView
-            android:id="@+id/second_stat_item"
-            android:layout_width="100dp"
-            android:layout_height="match_parent" />
-
-        <info.kimjihyok.coloverstatisticsview.ColorStatisticsItemView
-            android:id="@+id/third_stat_item"
-            android:layout_width="100dp"
-            android:layout_height="match_parent" />
+        android:layout_below="@+id/title_text_view">>
     </LinearLayout>
 
 

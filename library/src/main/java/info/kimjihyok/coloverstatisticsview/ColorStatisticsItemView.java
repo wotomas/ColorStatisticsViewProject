@@ -105,6 +105,15 @@ public class ColorStatisticsItemView extends View {
     setMeasuredDimension(w, h);
   }
 
+  public int getStatValue() {
+    return statisticsCount;
+  }
+
+  public void setStatValue(int value) {
+    statisticsCount = value;
+    invalidate();
+    requestLayout();
+  }
 
   public void set(StatisticsData data) {
     circleColor = data.getColor();

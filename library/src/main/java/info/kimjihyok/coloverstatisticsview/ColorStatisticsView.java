@@ -7,7 +7,9 @@ import android.graphics.Color;
 import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,13 +30,8 @@ public class ColorStatisticsView extends RelativeLayout {
   private RelativeLayout panel;
   private TextView titleTextView;
   private LinearLayout colorItemPanel;
-  private ColorStatisticsItemView firstItemView;
-  private ColorStatisticsItemView secondItemView;
-  private ColorStatisticsItemView thirdItemView;
 
-
-  private List<StatisticsData> statisticsItems;
-
+  private List<ColorStatisticsItemView> itemViews;
   private Context context;
 
   public ColorStatisticsView(Context context) {
@@ -54,7 +51,7 @@ public class ColorStatisticsView extends RelativeLayout {
 
   private void init(Context context, AttributeSet attrs) {
     this.context = context;
-    statisticsItems = new ArrayList<>();
+    itemViews = new ArrayList<>();
 
     TypedArray a = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.ColorStatisticsView, 0, 0);
     try {
@@ -71,9 +68,6 @@ public class ColorStatisticsView extends RelativeLayout {
     panel = (RelativeLayout) findViewById(R.id.panel_background);
     titleTextView = (TextView) findViewById(R.id.title_text_view);
     colorItemPanel = (LinearLayout) findViewById(R.id.color_panel);
-    firstItemView = (ColorStatisticsItemView) findViewById(R.id.first_stat_item);
-    secondItemView = (ColorStatisticsItemView) findViewById(R.id.second_stat_item);
-    thirdItemView = (ColorStatisticsItemView) findViewById(R.id.third_stat_item);
 
     panel.setBackgroundColor(bgColor);
     titleTextView.setText(titleText);
@@ -130,15 +124,48 @@ public class ColorStatisticsView extends RelativeLayout {
     requestLayout();
   }
 
-  public void setStatisticsItems(List<StatisticsData> statisticsItems) {
-    if (statisticsItems.size() != 3) {
-      throw new IllegalStateException("Currently supported itemSize is 3");
+
+  public int getStatValue(int position) {
+    if (itemViews == null || itemViews.size() <= 0) {
+      throw new IllegalStateException("You have to initialize the stat items first! Call setStatisticsItems(List<StatisticsData> statisticsItems) first!");
     }
 
-    this.statisticsItems = statisticsItems;
-    firstItemView.set(statisticsItems.get(0));
-    secondItemView.set(statisticsItems.get(1));
-    thirdItemView.set(statisticsItems.get(2));
+    if (position >= itemViews.size()) {
+      throw new IllegalStateException("Are you sure you called the correct position? currently saved statistics size is: " + itemViews.size());
+    }
+
+    return itemViews.get(position).getStatValue();
+  }
+
+
+  public void setStatValue(int position, int statValue) {
+    if (itemViews == null || itemViews.size() <= 0) {
+      throw new IllegalStateException("You have to initialize the stat items first! Call setStatisticsItems(List<StatisticsData> statisticsItems) first!");
+    }
+
+    if (position >= itemViews.size()) {
+      throw new IllegalStateException("Are you sure you called the correct position? currently saved statistics size is: " + itemViews.size());
+    }
+
+    itemViews.get(position).setStatValue(statValue);
+  }
+
+
+  public void setStatisticsItems(List<StatisticsData> statisticsItems) {
+    if (statisticsItems.size() > 3) {
+      throw new IllegalStateException("Currently supported max itemSize is 3");
+    }
+
+    final int width = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 100, getResources().getDisplayMetrics());
+
+    for (StatisticsData data : statisticsItems) {
+      ColorStatisticsItemView item = new ColorStatisticsItemView(getContext());
+      item.setLayoutParams(new LayoutParams(width, ViewGroup.LayoutParams.MATCH_PARENT));
+      item.set(data);
+
+      itemViews.add(item);
+      colorItemPanel.addView(item);
+    }
 
     invalidate();
     requestLayout();
